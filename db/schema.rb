@@ -10,7 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_07_132608) do
+ActiveRecord::Schema.define(version: 2020_08_08_125829) do
+
+  create_table "addposts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.text "keyword4", null: false
+    t.text "keyword5"
+    t.text "keyword6"
+    t.bigint "user_id", null: false
+    t.bigint "post_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["post_id"], name: "index_addposts_on_post_id"
+    t.index ["user_id"], name: "index_addposts_on_user_id"
+  end
 
   create_table "posts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "image"
@@ -40,5 +52,7 @@ ActiveRecord::Schema.define(version: 2020_08_07_132608) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "addposts", "posts"
+  add_foreign_key "addposts", "users"
   add_foreign_key "posts", "users"
 end
