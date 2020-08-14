@@ -9,6 +9,11 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.create(post_params)
+    if @post.save
+      redirect_to root_path
+    else
+      render :new
+    end
   end
 
   def destroy
@@ -32,7 +37,7 @@ class PostsController < ApplicationController
 
   private
   def post_params
-    params.require(:post).permit(:image, :animal, :food, :aura_color, :keyword1, :keyword2, :keyword3).merge(user_id: current_user.id)
+    params.require(:post).permit(:image, :animal, :food, :aura_color, :keyword1, :keyword2, :keyword3, :created_at).merge(user_id: current_user.id)
   end
 
   def set_post

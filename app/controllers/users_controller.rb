@@ -11,6 +11,12 @@ class UsersController < ApplicationController
   end
 
   def show
+    @user = User.find(params[:id])
+    @post = Post.where(user_id: current_user.id)
+    @users = @user.posts.order("created_at DESC")
+    if @user.id != current_user.id
+      redirect_to root_path
+    end
   end
 
   private
@@ -18,4 +24,6 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit(:name, :email)
   end
+
+  
 end
