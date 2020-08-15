@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :set_post, only: [:edit, :show, :update]
+  before_action :set_post, only: [:edit, :show, :update, :destroy]
   def index
   end
 
@@ -17,8 +17,11 @@ class PostsController < ApplicationController
   end
 
   def destroy
-    post = Post.find(params[:id])
-    post.destroy
+    if @post.destroy
+      redirect_to root_path
+    else
+      flash[:notice] = "削除に失敗しました"
+    end
   end
 
   def edit

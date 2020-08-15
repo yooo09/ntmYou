@@ -18,5 +18,9 @@
       .post__keyword3
         = @post.keyword3
   - if user_signed_in? && @post.user_id == current_user.id
-    = link_to edit_post_path(@post.id) do
-      編集・追加する
+    .edit-btn
+      = link_to edit_post_path(@post.id) do
+        編集・追加する
+    .delete-btn
+      = link_to post_path(@post.id), method: :delete do
+        削除する
