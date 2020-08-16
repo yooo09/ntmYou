@@ -20,7 +20,10 @@
   - if user_signed_in? && @post.user_id == current_user.id
     .edit-btn
       = link_to edit_post_path(@post.id) do
-        編集・追加する
+        編集する
+    .addpost-btn
+      = link_to new_post_addpost_path(@post.id) do
+        追加する
     .delete-btn
       = link_to post_path(@post.id), method: :delete do
         削除する

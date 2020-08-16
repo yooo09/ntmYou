@@ -25,6 +25,7 @@ class PostsController < ApplicationController
   end
 
   def edit
+    @addpost = Addpost.new
   end
 
   def update
@@ -37,7 +38,6 @@ class PostsController < ApplicationController
   end
 
   def show
-    @addpost = Addpost.new
     @addposts = @post.addposts.includes(:user)
   end
 
