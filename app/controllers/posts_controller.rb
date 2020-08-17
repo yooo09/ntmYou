@@ -38,11 +38,6 @@ class PostsController < ApplicationController
       render :edit
     end
     @addpost.update(addpost_params)
-    # if @addpost.save
-    #   redirect_to root_path
-    # else
-    #   render :edit
-    # end
   end
 
   def show

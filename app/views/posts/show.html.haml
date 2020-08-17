@@ -69,9 +69,6 @@
                     = addpost.keyword5
                   .addpost__keyword3
                     = addpost.keyword6
-                  .edit-btn
-                    = link_to edit_post_addpost_path(@post.addposts.ids) do
-                      編集する
                   .delete-btn
                     = link_to post_addpost_path(addpost), method: :delete do
                       削除する
