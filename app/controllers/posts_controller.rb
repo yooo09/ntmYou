@@ -1,5 +1,7 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:edit, :show, :update, :destroy]
+  before_action :move_to_index, except: [:index, :show]
+  
   def index
   end
 
@@ -25,7 +27,7 @@ class PostsController < ApplicationController
   end
 
   def edit
-    @addpost = Addpost.new
+    @addpost = Addpost.find(params[:id])
   end
 
   def update
@@ -35,9 +37,16 @@ class PostsController < ApplicationController
     else
       render :edit
     end
+    @addpost.update(addpost_params)
+    # if @addpost.save
+    #   redirect_to root_path
+    # else
+    #   render :edit
+    # end
   end
 
   def show
+    @addpost = Addpost.new
     @addposts = @post.addposts.includes(:user)
   end
 
@@ -50,6 +59,10 @@ class PostsController < ApplicationController
   def set_post
     @post = Post.find(params[:id])
     @posts = Post.all
+  end
+
+  def move_to_index
+    redirect_to action: :index unless user_signed_in?
   end
 
 end
