@@ -25,8 +25,8 @@
 |password|string|null: false|
 |password confirmation|string|null: false|
 
-has_many :poats
-has_many :addposts
+- has_many :poats
+- has_many :addposts
 
 ## postsテーブル
 |Column|Type|Options|
@@ -40,8 +40,8 @@ has_many :addposts
 |keyword3|text|
 |user_id|integer|null: false, foreign_key: true|
 
-has_many :addposts
-belongs_to :user
+- has_many :addposts
+- belongs_to :user
 
 ## addpostsテーブル
 |Column|Type|Options|
@@ -52,14 +52,5 @@ belongs_to :user
 |post_id|integer|null: false, foreign_key: true|
 |user_id|integer|null: false, foreign_key: true|
 
-belongs_to :post
-belongs_to :user
-
-
-## categoriesテーブル
-|Column|Type|Options|
-|:----:|:----:|:----:|
-|text|text|null: false|
-
-has_many :category_posts
-has_many :posts, through: category_posts
+- belongs_to :post
+- belongs_to :user
