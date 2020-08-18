@@ -27,7 +27,6 @@ class PostsController < ApplicationController
   end
 
   def edit
-    @addpost = Addpost.find(params[:id])
   end
 
   def update
@@ -38,11 +37,6 @@ class PostsController < ApplicationController
       render :edit
     end
     @addpost.update(addpost_params)
-    # if @addpost.save
-    #   redirect_to root_path
-    # else
-    #   render :edit
-    # end
   end
 
   def show

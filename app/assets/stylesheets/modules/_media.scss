@@ -1,11 +1,24 @@
-@media (max-width: 480px){
-  .content .btn {
-    font-size: 1.2rem;
+* {
+  box-sizing:border-box;
+}
+
+body {
+  margin: 0;
+  font-family: fantasy, '游ゴシック体','YuGothic';
+}
+
+a {
+  text-decoration: none;
+}
+
+@media (max-width: 1000px) {
+  li {
+    font-size: 0.9rem;
   }
 }
 
-@media (min-width: 1080px) {
-  .content .btn {
-    font-size: 2rem;
+@media (max-width: 670px){
+  li {
+    font-size: 0.5rem;
   }
 }
