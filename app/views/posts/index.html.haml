@@ -18,6 +18,7 @@
             %li.menu-list__mypage
               = link_to user_path(current_user.id) do
                 =current_user.name
+                　memory
             %li.menu-list__logout
               = link_to destroy_user_session_path(), method: :delete do
                 ログアウト
