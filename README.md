@@ -2,6 +2,9 @@
 
 ### 概要
 ##### 
+###### 
+###### 
+###### 
 
 ### 接続先情報
 #### URL http://
@@ -12,10 +15,10 @@
 ##### 　パスワード:
 
 ### 開発環境
-##### Ruby/Ruby on Rails/MySQL/Github/Visual Studio Code
+##### Ruby/Ruby on Rails/MySQL/Github/Visual Studio Code/Illustrator/Photoshop
 
 ### 制作背景
-##### 
+#####
 
 ## usersテーブル
 |Column|Type|Options|

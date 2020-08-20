@@ -1,0 +1,166 @@
+.form {
+  width: 100%;
+  height: 100vh;
+  background-image: image-url("image_fff.jpg");
+  background-size: cover;
+  .main {
+    .ntmy-day {
+      border: solid 1px #ff9a9e;
+      padding: 10px;
+      width: 40%;
+      margin: 1% auto;
+      text-align: center;
+      background-color: whitesmoke;
+      height: 10%;
+      &__content {
+      }
+      .ntmy-day__box {
+        .ntmy-label {
+          display: none;
+        }
+      }
+    }
+    .image {
+      border: solid 1px #ff9a9e;
+      padding: 10px;
+      width: 40%;
+      margin: 1% auto;
+      text-align: center;
+      background-color: whitesmoke;
+      height: 10%;
+      &__content {
+        #image-box {
+          .image-data {
+          }
+        }
+      }
+    }
+    .animal {
+      border: solid 1px #ff9a9e;
+      padding: 10px;
+      width: 40%;
+      margin: 1% auto;
+      text-align: center;
+      background-color: whitesmoke;
+      height: 10%;
+      &__content {
+        .animal-box {
+          .animal-data {
+  
+          }
+        }
+      }
+    }
+    .food {
+      border: solid 1px #ff9a9e;
+      padding: 10px;
+      width: 40%;
+      margin: 1% auto;
+      text-align: center;
+      background-color: whitesmoke;
+      height: 10%;
+      &__content {
+        .food-box {
+          .food-data {
+            
+          }
+        }
+      }
+    }
+    .color {
+      border: solid 1px #ff9a9e;
+      padding: 10px;
+      width: 40%;
+      margin: 1% auto;
+      text-align: center;
+      background-color: whitesmoke;
+      height: 10%;
+      &__content {
+        .color-box {
+          .aura_color-data {
+            
+          }
+        }
+      }
+    }
+    .keyword {
+      border: solid 1px #ff9a9e;
+      padding: 10px;
+      width: 40%;
+      margin: 1% auto;
+      text-align: center;
+      background-color: whitesmoke;
+      height: 10%;
+      &__content {
+        .keyword-box {
+          .keyword-data {
+            
+          }
+        }
+      }
+    }
+    .submit {
+      width: 60%;
+      margin: 2% auto;
+      text-align: center;
+      height: 10%;
+    }
+  }
+}
+
+// .form
+// = form_with model: @post, class: :form, local: :true do |f|
+//   .ntmy-day
+//     .ntmy-day__content
+//       %h3
+//         出会った日を選択
+//         .ntmy-day__box
+//           = f.label :created_at, class: 'ntmy-label'
+//           = f.date_select :created_at, class: 'ntmy-data'
+//   .image
+//     .image__content
+//       %h3
+//         画像選択
+//       #image-box
+//         = f.file_field :image, class: 'image-data'
+//   .animal
+//     .animal__content
+//       %h3
+//         「動物」イメージ
+//       .animal-box
+//         = f.text_field :animal, class: 'animal-data'
+//   .food
+//     .food__content
+//       %h3
+//         「食べ物」イメージ
+//       .food-box
+//         = f.text_field :food, class: 'food-data'
+//   .color
+//     .color__content
+//       %h3
+//         「オーラ」カラーイメージ
+//       .color-box
+//         = f.text_field :aura_color, class: 'aura_color-data'
+//   .keyword
+//     .keyword__content
+//       %h3
+//         ①キーワード
+//       .keyword-box
+//       -if @post.errors.messages[:keyword1].any?
+//         .error-message
+//           %p必ず入力してください
+//       = f.text_area :keyword1, class: 'keyword-data'
+//   .keyword
+//     .keyword__content
+//       %h3
+//         ②キーワード
+//       .keyword-box
+//       = f.text_area :keyword2, class: 'keyword-data'
+//   .keyword
+//     .keyword__content
+//       %h3
+//         ③キーワード
+//       .keyword-box
+//       = f.text_area :keyword3, class: 'keyword-data'
+//   .submit
+//     = f.submit 'キオクする', class: 'submit-btn'
