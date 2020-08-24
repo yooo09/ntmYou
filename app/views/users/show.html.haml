@@ -1,21 +1,26 @@
 .user-show
   .post-content
-    .post-content_box
+    .post
       - @post.each do |post|
         = link_to post_path(post.id), class:"link_tag" do
-          .post__ntmy-day
-            = post.created_at.strftime("%Y/%m/%d")
-          .post__image
-            = post.image
-          .post__animal
-            = post.animal
-          .post__food
-            = post.food
-          .post__aura_color
-            = post.aura_color
-          .post__keyword1
-            = post.keyword1
-          .post__keyword2
-            = post.keyword2
-          .post__keyword3
-            = post.keyword3
+          .box
+            .box__left
+              .box__left__image
+                = image_tag post.image.url, class: 'post__imagge-url' if post.image.present?
+            .box__right
+              .box__right__ntmy-day
+                = post.created_at.strftime("%Y/%m/%d")
+              .box__right__animal
+                = post.animal
+              .box__right__food
+                = post.food
+              .box__right__aura_color
+                = post.aura_color
+              .box__right__keyword1
+                = post.keyword1
+              .box__right__keyword2
+                = post.keyword2
+              .box__right__keyword3
+                = post.keyword3
+      = paginate(@posts)
+  = render partial: 'posts/footer'

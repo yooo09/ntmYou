@@ -1,0 +1,56 @@
+.user-show {
+  .post-content {
+    width: 100%;
+    background-image: image-url("image_f.jpg");
+    background-size: cover;
+    padding: 5%;
+    .post {
+      .box {
+        border: solid 2px #ff9a9e;
+        border-radius: 5px;
+        width: 70%;
+        margin: 0 auto 1%;
+        padding: 3%;
+        background-color: rgba(247, 243, 243, 0.8);
+        display: flex;
+        &__left {
+          width: 50%;
+          &__image {
+            img {
+              width: 20%;
+            }
+          }
+        }
+        &__right {
+          &__ntmy-day {
+          }
+        }
+      }
+
+    }
+  }
+}
+
+
+// .user-show
+// .post-content
+//   .post-content_box
+//     - @post.each do |post|
+//       = link_to post_path(post.id), class:"link_tag" do
+//         .post__ntmy-day
+//           = post.created_at.strftime("%Y/%m/%d")
+//         .post__image
+//           = image_tag post.image.url, class: 'post__imagge-url' if post.image.present?
+//         .post__animal
+//           = post.animal
+//         .post__food
+//           = post.food
+//         .post__aura_color
+//           = post.aura_color
+//         .post__keyword1
+//           = post.keyword1
+//         .post__keyword2
+//           = post.keyword2
+//         .post__keyword3
+//           = post.keyword3
+//     = paginate(@posts)

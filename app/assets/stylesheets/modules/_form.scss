@@ -1,0 +1,101 @@
+.form {
+  width: 100%;
+  margin: 5% 0 auto;
+  .main {
+    background-image: image-url("image_fff.jpg");
+    background-size: cover;
+    border: solid 1px #ff9a9e;
+    padding: 40px;
+    width: 70%;
+    margin: 0 auto;
+    .ntmy-day {
+      opacity: 0.8;
+      border: solid 1px #ff9a9e;
+      text-align: center;
+      background-color: whitesmoke;
+      padding: 10px;
+      margin-bottom: 5%;
+      &__content {
+      }
+      .ntmy-day__box {
+        .ntmy-label {
+          display: none;
+        }
+      }
+    }
+    .image {
+      opacity: 0.8;
+      border: solid 1px #ff9a9e;
+      padding: 10px;
+      text-align: center;
+      background-color: whitesmoke;
+      margin-bottom: 5%;
+      &__content {
+        #image-box {
+          .image-data {
+          }
+        }
+      }
+    }
+    .animal {
+      opacity: 0.8;
+      border: solid 1px #ff9a9e;
+      padding: 10px;
+      text-align: center;
+      background-color: whitesmoke;
+      margin-bottom: 5%;
+      &__content {
+        .animal-box {
+          .animal-data {
+          }
+        }
+      }
+    }
+    .food {
+      opacity: 0.8;
+      border: solid 1px #ff9a9e;
+      padding: 10px;
+      text-align: center;
+      background-color: whitesmoke;
+      margin-bottom: 5%;
+      &__content {
+        .food-box {
+          .food-data {
+          }
+        }
+      }
+    }
+    .color {
+      opacity: 0.8;
+      border: solid 1px #ff9a9e;
+      padding: 10px;
+      text-align: center;
+      background-color: whitesmoke;
+      margin-bottom: 5%;
+      &__content {
+        .color-box {
+          .aura_color-data {
+          }
+        }
+      }
+    }
+    .keyword {
+      opacity: 0.8;
+      border: solid 1px #ff9a9e;
+      padding: 10px;
+      text-align: center;
+      background-color: whitesmoke;
+      margin-bottom: 5%;
+      &__content {
+        .keyword-box {
+          .keyword-data {
+          }
+        }
+      }
+    }
+    .submit {
+      text-align: center;
+      padding: 10px;
+    }
+  }
+}

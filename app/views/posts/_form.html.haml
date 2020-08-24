@@ -1,56 +1,57 @@
 .form
-  = form_with model: @post, class: :form, local: :true do |f|
-    .ntmy-day
-      .ntmy-day__content
-        %h3
-          出会った日を選択
+  .main
+    = form_with model: @post, class: :form, local: :true do |f|
+      .ntmy-day
+        .ntmy-day__content
+          %h3
+            出会った日を選択
           .ntmy-day__box
             = f.label :created_at, class: 'ntmy-label'
             = f.date_select :created_at, class: 'ntmy-data'
-    .image
-      .image__content
-        %h3
-          画像選択
-        #image-box
-          = f.file_field :image, class: 'image-data'
-    .animal
-      .animal__content
-        %h3
-          「動物」イメージ
-        .animal-box
-          = f.text_field :animal, class: 'animal-data'
-    .food
-      .food__content
-        %h3
-          「食べ物」イメージ
-        .food-box
-          = f.text_field :food, class: 'food-data'
-    .color
-      .color__content
-        %h3
-          「オーラ」カラーイメージ
-        .color-box
-          = f.text_field :aura_color, class: 'aura_color-data'
-    .keyword
-      .keyword__content
-        %h3
-          ①キーワード
-        .keyword-box
-        -if @post.errors.messages[:keyword1].any?
-          .error-message
-            %p必ず入力してください
-        = f.text_area :keyword1, class: 'keyword-data'
-    .keyword
-      .keyword__content
-        %h3
-          ②キーワード
-        .keyword-box
-        = f.text_area :keyword2, class: 'keyword-data'
-    .keyword
-      .keyword__content
-        %h3
-          ③キーワード
-        .keyword-box
-        = f.text_area :keyword3, class: 'keyword-data'
-    .submit
-      = f.submit 'キオクする', class: 'submit-btn'
+      .image
+        .image__content
+          %h3
+            画像選択
+          #image-box
+            = f.file_field :image, class: 'image-data'
+      .animal
+        .animal__content
+          %h3
+            「動物」イメージ
+          .animal-box
+            = f.text_field :animal, class: 'animal-data'
+      .food
+        .food__content
+          %h3
+            「食べ物」イメージ
+          .food-box
+            = f.text_field :food, class: 'food-data'
+      .color
+        .color__content
+          %h3
+            「オーラ」カラーイメージ
+          .color-box
+            = f.text_field :aura_color, class: 'aura_color-data'
+      .keyword
+        .keyword__content
+          %h3
+            ※必須　①キーワード
+          .keyword-box
+          -if @post.errors.messages[:keyword1].any?
+            .error-message
+              %p必ず入力してください
+          = f.text_area :keyword1, class: 'keyword-data'
+      .keyword
+        .keyword__content
+          %h3
+            ②キーワード
+          .keyword-box
+          = f.text_area :keyword2, class: 'keyword-data'
+      .keyword
+        .keyword__content
+          %h3
+            ③キーワード
+          .keyword-box
+          = f.text_area :keyword3, class: 'keyword-data'
+      .submit
+        = f.submit 'キオクする', class: 'submit-btn'
