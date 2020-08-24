@@ -11,8 +11,9 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
     @post = Post.where(user_id: current_user.id)
+    @user = User.find(params[:id])
+    @posts = @user.posts.page(params[:page]).per(5).order("created_at DESC")
     @users = @user.posts.order("created_at DESC")
     if @user.id != current_user.id
       redirect_to root_path
