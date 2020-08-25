@@ -10,12 +10,16 @@
             .box__right
               .box__right__ntmy-day
                 = post.created_at.strftime("%Y/%m/%d")
-              .box__right__animal
-                = post.animal
-              .box__right__food
-                = post.food
-              .box__right__aura_color
-                = post.aura_color
+                .right-list
+                  - if post.animal.present?
+                    .right-list__animal
+                      = post.animal
+                  - if post.food.present?
+                    .right-list__food
+                      = post.food
+                  - if post.aura_color.present?
+                    .right-list__aura_color
+                      = post.aura_color
               .box__right__keyword1
                 = post.keyword1
               .box__right__keyword2

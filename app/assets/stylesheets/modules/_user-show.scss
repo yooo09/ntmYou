@@ -5,6 +5,9 @@
     background-size: cover;
     padding: 5%;
     .post {
+      :hover {
+        opacity: 0.9;
+      }
       .box {
         border: solid 2px #ff9a9e;
         border-radius: 5px;
@@ -22,11 +25,39 @@
           }
         }
         &__right {
+          width: 50%;
           &__ntmy-day {
+          }
+          .right-list {
+            display: flex;
+            justify-content: space-around;
+            &__animal {
+              border: solid 2px #ff9a9e;
+              height:50%;
+              width:50%;
+              border-radius:50%;
+              line-height:50px;
+              text-align:center;
+            }
+            &__food {
+              border: solid 2px #ff9a9e;
+              height:50%;
+              width:50%;
+              border-radius:50%;
+              line-height:50px;
+              text-align:center;
+            }
+            &__aura_color {
+              border: solid 2px #ff9a9e;
+              height:50%;
+              width:50%;
+              border-radius:50%;
+              line-height:50px;
+              text-align:center;
+            }
           }
         }
       }
-
     }
   }
 }
