@@ -5,55 +5,83 @@
     background-size: cover;
     padding: 5%;
     .post {
-      :hover {
-        opacity: 0.9;
-      }
       .box {
         border: solid 2px #ff9a9e;
         border-radius: 5px;
-        width: 70%;
+        width: 60%;
         margin: 0 auto 1%;
         padding: 3%;
         background-color: rgba(247, 243, 243, 0.8);
         display: flex;
         &__left {
-          width: 50%;
+          width: 30%;
+          margin: 0 auto;;
           &__image {
             img {
-              width: 20%;
+              width: 90%;
+              height: 90%;
+              :hover {
+                opacity: 0.9;
+              }
             }
           }
         }
         &__right {
-          width: 50%;
+          width: 70%;
           &__ntmy-day {
+            line-height:10vh;
+            padding-left: 2%;
+            color:rgb(44, 43, 43);
           }
           .right-list {
+            color: whitesmoke;
             display: flex;
             justify-content: space-around;
+            :hover {
+              opacity: 0.9;
+            }
             &__animal {
-              border: solid 2px #ff9a9e;
+              background-color: #ff9a9db9;
               height:50%;
-              width:50%;
+              width:30%;
               border-radius:50%;
-              line-height:50px;
+              line-height:10vh;
               text-align:center;
+              margin-right: 2%;
             }
             &__food {
-              border: solid 2px #ff9a9e;
+              background-color: #ff9a9db9;
               height:50%;
-              width:50%;
+              width:30%;
               border-radius:50%;
-              line-height:50px;
+              line-height:10vh;
               text-align:center;
             }
             &__aura_color {
-              border: solid 2px #ff9a9e;
+              background-color: #ff9a9db9;
               height:50%;
-              width:50%;
+              width:30%;
               border-radius:50%;
-              line-height:50px;
+              line-height:10vh;
               text-align:center;
+              margin-left: 2%;
+            }
+          }
+          &__list {
+            color:rgb(44, 43, 43);
+            padding: 5%;
+            &__keyword1 {
+              text-align:center;
+              line-height: 3vw;
+              margin-top: 3%;
+            }
+            &__keyword2 {
+              text-align:center;
+              line-height: 3vw;
+            }
+            &__keyword3 {
+              text-align:center;
+              line-height: 3vw;
             }
           }
         }
@@ -61,27 +89,3 @@
     }
   }
 }
-
-
-// .user-show
-// .post-content
-//   .post-content_box
-//     - @post.each do |post|
-//       = link_to post_path(post.id), class:"link_tag" do
-//         .post__ntmy-day
-//           = post.created_at.strftime("%Y/%m/%d")
-//         .post__image
-//           = image_tag post.image.url, class: 'post__imagge-url' if post.image.present?
-//         .post__animal
-//           = post.animal
-//         .post__food
-//           = post.food
-//         .post__aura_color
-//           = post.aura_color
-//         .post__keyword1
-//           = post.keyword1
-//         .post__keyword2
-//           = post.keyword2
-//         .post__keyword3
-//           = post.keyword3
-//     = paginate(@posts)
