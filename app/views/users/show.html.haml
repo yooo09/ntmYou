@@ -1,15 +1,15 @@
 .user-show
   .post-content
     .post
-      - @post.each do |post|
+      - @posts.each do |post|
         .box
           - if post.image.present?
             .box__left
               .box__left__image
-                = link_to post_path(post.id) do
+                = link_to post_path(post.id), class:"link_tag" do
                   = image_tag post.image.url, class: 'post__imagge-url'
           .box__right
-            = link_to post_path(post.id) do
+            = link_to post_path(post.id), class:"link_tag" do
               .box__right__ntmy-day
                 = post.created_at.strftime("%Y/%m/%d")
                 .right-list
@@ -31,5 +31,5 @@
                 - if post.keyword2.present?
                   .box__right__list__keyword3
                     = post.keyword3
-      = paginate(@posts)
+  = paginate(@posts)
   = render partial: 'posts/footer'

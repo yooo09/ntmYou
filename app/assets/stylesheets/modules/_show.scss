@@ -1,6 +1,25 @@
+@mixin right-list {
+  // background-color: #ff9a9db9;
+  // height:50%;
+  // width:30%;
+  // border-radius:50%;
+  // line-height:10vh;
+  // text-align:center;
+}
+
 .posts-show {
   .post-content {
-    &__box {
+    width: 100%;
+    background-image: image-url("image_ff.jpg");
+    background-size: cover;
+    padding: 5%;
+    .post {
+      border: solid 2px #ff9a9e;
+      border-radius: 5px;
+      width: 60%;
+      margin: 0 auto 1%;
+      padding: 3%;
+      background-color: rgba(247, 243, 243, 0.8);
       .post__ntmy-day {
       }
       .post__image {
@@ -16,6 +35,15 @@
       .post__keyword2 {
       }
       .post__keyword3 {
+      }
+    }
+    .addpost__list {
+      .addpost-content {
+        .addpost {
+          &__ntmy-day {
+            
+          }
+        }
       }
     }
   }
@@ -52,6 +80,22 @@
 //         = @post.keyword2
 //       .post__keyword3
 //         = @post.keyword3
+//     .addpost__list
+//       - if @addposts
+//         - @addposts.each do |addpost|
+//           .addpost-content
+//             .addpost-content_box
+//               .addpost__ntmy-day
+//                 = addpost.created_at.strftime("%Y/%m/%d")
+//               .addpost__keyword1
+//                 = addpost.keyword4
+//               .addpost__keyword2
+//                 = addpost.keyword5
+//               .addpost__keyword3
+//                 = addpost.keyword6
+//               .delete-btn
+//                 = link_to post_addpost_path(addpost), method: :delete do
+//                   削除する
 //   - if user_signed_in? && @post.user_id == current_user.id
 //     .edit-btn
 //       = link_to edit_post_path(@post.id) do
@@ -91,19 +135,3 @@
 //             = f.text_area :keyword6, class: 'keyword-data'
 //         .submit
 //           = f.submit 'キオクする', class: 'submit-btn'
-//         .addpost__list
-//           - if @addposts
-//             - @addposts.each do |addpost|
-//               .addpost-content
-//                 .addpost-content_box
-//                   .addpost__ntmy-day
-//                     = addpost.created_at.strftime("%Y/%m/%d")
-//                   .addpost__keyword1
-//                     = addpost.keyword4
-//                   .addpost__keyword2
-//                     = addpost.keyword5
-//                   .addpost__keyword3
-//                     = addpost.keyword6
-//                   .delete-btn
-//                     = link_to post_addpost_path(addpost), method: :delete do
-//                       削除する

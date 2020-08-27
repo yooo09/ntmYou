@@ -5,11 +5,16 @@
 body {
   margin: 0;
   font-family: fantasy, '游ゴシック体','YuGothic';
+  color: rgb(44, 43, 43);
 }
 
 a {
   font-size: 1vw;
   text-decoration: none;
+}
+
+a:link, a:visited, a:hover, a:active {
+  color: rgb(44, 43, 43);
 }
 
 @media (max-width: 1000px) {

@@ -1,10 +1,10 @@
 .posts-show
   .post-content
-    .post-content_box
+    .post
       .post__ntmy-day
         = @post.created_at.strftime("%Y/%m/%d")
       .post__image
-        = @post.image
+        = image_tag @post.image.url, class: 'post__imagge-url' if @post.image.present?
       .post__animal
         = @post.animal
       .post__food
@@ -17,13 +17,30 @@
         = @post.keyword2
       .post__keyword3
         = @post.keyword3
-  - if user_signed_in? && @post.user_id == current_user.id
-    .edit-btn
-      = link_to edit_post_path(@post.id) do
-        編集する
-    .delete-btn
-      = link_to post_path(@post.id), method: :delete do
-        削除する
+    .addpost__list
+      - if @addposts
+        - @addposts.each do |addpost|
+          .addpost-content
+            .addpost
+              .addpost__ntmy-day
+                = addpost.created_at.strftime("%Y/%m/%d")
+              .addpost__keyword1
+                = addpost.keyword4
+              .addpost__keyword2
+                = addpost.keyword5
+              .addpost__keyword3
+                = addpost.keyword6
+              .delete-btn
+                = link_to post_addpost_path(addpost), method: :delete do
+                  削除する
+    .select
+      - if user_signed_in? && @post.user_id == current_user.id
+        .select__edit-btn
+          = link_to edit_post_path(@post.id) do
+            編集する
+        .select__delete-btn
+          = link_to post_path(@post.id), method: :delete do
+            削除する
     .form
       = form_with model: [@post, @addpost], class: :form, local: :true do |f|
         .ntmy-day
@@ -56,20 +73,4 @@
             = f.text_area :keyword6, class: 'keyword-data'
         .submit
           = f.submit 'キオクする', class: 'submit-btn'
-        .addpost__list
-          - if @addposts
-            - @addposts.each do |addpost|
-              .addpost-content
-                .addpost-content_box
-                  .addpost__ntmy-day
-                    = addpost.created_at.strftime("%Y/%m/%d")
-                  .addpost__keyword1
-                    = addpost.keyword4
-                  .addpost__keyword2
-                    = addpost.keyword5
-                  .addpost__keyword3
-                    = addpost.keyword6
-                  .delete-btn
-                    = link_to post_addpost_path(addpost), method: :delete do
-                      削除する
   = render partial: 'footer'

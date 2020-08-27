@@ -6,6 +6,10 @@
   line-height:10vh;
   text-align:center;
 }
+@mixin keyword {
+  text-align:center;
+  line-height: 3vw;
+}
 
 .user-show {
   .post-content {
@@ -63,24 +67,30 @@
             }
           }
           &__list {
-            color:rgb(44, 43, 43);
             padding: 5%;
             &__keyword1 {
-              text-align:center;
-              line-height: 3vw;
+              @include keyword;
               margin-top: 3%;
             }
             &__keyword2 {
-              text-align:center;
-              line-height: 3vw;
+              @include keyword;
             }
             &__keyword3 {
-              text-align:center;
-              line-height: 3vw;
+              @include keyword;
             }
           }
         }
       }
     }
+  }
+}
+nav {
+  padding: 2%;
+  text-align: center;
+  :hover {
+    color: #ff9a9e;
+  }
+  span {
+    margin-left: 1%;
   }
 }
