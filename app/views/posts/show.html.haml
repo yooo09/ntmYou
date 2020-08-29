@@ -1,6 +1,15 @@
 .posts-show
   .post-content
     .post
+      .post__contens
+        .select
+          - if user_signed_in? && @post.user_id == current_user.id
+            .select__edit-btn
+              = link_to edit_post_path(@post.id), class: "btn-brackets" do
+                編集する
+            .select__delete-btn
+              = link_to post_path(@post.id), class: "btn-brackets", method: :delete do
+                削除する
       .post__ntmy-day
         = @post.created_at.strftime("%Y/%m/%d")
       .post__image
@@ -35,14 +44,7 @@
               .delete-btn
                 = link_to post_addpost_path(addpost), method: :delete do
                   削除する
-    .select
-      - if user_signed_in? && @post.user_id == current_user.id
-        .select__edit-btn
-          = link_to edit_post_path(@post.id) do
-            編集する
-        .select__delete-btn
-          = link_to post_path(@post.id), method: :delete do
-            削除する
+    
     .form
       = form_with model: [@post, @addpost], class: :form, local: :true do |f|
         .ntmy-day
@@ -76,3 +78,82 @@
         .submit
           = f.submit 'キオクする', class: 'submit-btn'
   = render partial: 'footer'
+
+-# .posts-show
+-#   .post-content
+-#     .post
+-#       .post__ntmy-day
+-#         = @post.created_at.strftime("%Y/%m/%d")
+-#       .post__image
+-#         = image_tag @post.image.url, class: 'post__imagge-url' if @post.image.present?
+-#       .post__box
+-#         .post__box__animal
+-#           = @post.animal
+-#         .post__box__food
+-#           = @post.food
+-#         .post__box__aura_color
+-#           = @post.aura_color
+-#       .post__keyword
+-#         .post__keyword__keyword1
+-#           = @post.keyword1
+-#         .post__keyword__keyword2
+-#           = @post.keyword2
+-#         .post__keyword__keyword3
+-#           = @post.keyword3
+-#     .addpost__list
+-#       - if @addposts
+-#         - @addposts.each do |addpost|
+-#           .addpost-content
+-#             .addpost
+-#               .addpost__ntmy-day
+-#                 = addpost.created_at.strftime("%Y/%m/%d")
+-#               .addpost__keyword1
+-#                 = addpost.keyword4
+-#               .addpost__keyword2
+-#                 = addpost.keyword5
+-#               .addpost__keyword3
+-#                 = addpost.keyword6
+-#               .delete-btn
+-#                 = link_to post_addpost_path(addpost), method: :delete do
+-#                   削除する
+-#     .select
+-#       - if user_signed_in? && @post.user_id == current_user.id
+-#         .select__edit-btn
+-#           = link_to edit_post_path(@post.id) do
+-#             %td= button_to "編集する", class: "btn_text"
+-#         .select__delete-btn
+-#           = link_to post_path(@post.id), method: :delete do
+-#             %td= button_to "削除する", class: "btn_text"
+-#     .form
+-#       = form_with model: [@post, @addpost], class: :form, local: :true do |f|
+-#         .ntmy-day
+-#           .ntmy-day__content
+-#             %h3
+-#               再会日を選択
+-#               .ntmy-day__box
+-#                 = f.label :created_at, class: 'ntmy-label'
+-#                 = f.date_select :created_at, class: 'ntmy-data'
+-#         .keyword
+-#           .keyword__content
+-#             %h3
+-#               ※キーワード
+-#             .keyword-box
+-#             -if @addpost.errors.messages[:keyword4].any?
+-#               .error-message
+-#                 %p必ず入力してください
+-#             = f.text_area :keyword4, class: 'keyword-data'
+-#         .keyword
+-#           .keyword__content
+-#             %h3
+-#               キーワード
+-#             .keyword-box
+-#             = f.text_area :keyword5, class: 'keyword-data'
+-#         .keyword
+-#           .keyword__content
+-#             %h3
+-#               キーワード
+-#             .keyword-box
+-#             = f.text_area :keyword6, class: 'keyword-data'
+-#         .submit
+-#           = f.submit 'キオクする', class: 'submit-btn'
+-#   = render partial: 'footer'

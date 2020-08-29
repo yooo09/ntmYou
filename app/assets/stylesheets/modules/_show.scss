@@ -8,10 +8,43 @@
 }
 @mixin keyword-list {
   background-color: #ff9a9db9;
-  border-radius:5%;
+  border-radius: 20px;
   line-height:10vh;
   text-align:center;
   margin-top: 2%;
+}
+@mixin btn{
+  .btn-brackets {
+    display: inline-block;
+    position: relative;
+    padding: 0.5em 1em;
+    text-decoration: none;
+    transition: .4s;
+  }
+  .btn-brackets:hover {
+    color:#ff9a9e;
+  }
+  .btn-brackets:before, .btn-brackets:after {
+    position: absolute;
+    top: 0;
+    content:'';
+    width: 8px;
+    height: 100%;
+    display: inline-block;
+  }
+  .btn-brackets:before {
+    border-left: solid 1px #ff9a9e;
+    border-top: solid 1px #ff9a9e;
+    border-bottom: solid 1px #ff9a9e;
+    left: 0;
+  }
+  .btn-brackets:after {
+    content: '';
+    border-top: solid 1px #ff9a9e;
+    border-right: solid 1px #ff9a9e;
+    border-bottom: solid 1px #ff9a9e;
+    right: 0;
+  }
 }
 
 .posts-show {
@@ -27,6 +60,18 @@
       margin: 0 auto 1%;
       padding: 3%;
       background-color: rgba(247, 243, 243, 0.8);
+      &__contens {
+        .select {
+          float: right;
+          &__edit-btn {
+            @include btn;
+            margin-bottom: 10%;
+          }
+          &__delete-btn {
+            @include btn;
+          }
+        }
+      }
       &__ntmy-day {
         text-align: center;
         font-weight: bold;
