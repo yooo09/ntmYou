@@ -1,10 +1,17 @@
 @mixin right-list {
-  // background-color: #ff9a9db9;
-  // height:50%;
-  // width:30%;
-  // border-radius:50%;
-  // line-height:10vh;
-  // text-align:center;
+  background-color: #ff9a9db9;
+  height:50%;
+  width:30%;
+  border-radius:50%;
+  line-height:10vh;
+  text-align:center;
+}
+@mixin keyword-list {
+  background-color: #ff9a9db9;
+  border-radius:5%;
+  line-height:10vh;
+  text-align:center;
+  margin-top: 2%;
 }
 
 .posts-show {
@@ -20,28 +27,56 @@
       margin: 0 auto 1%;
       padding: 3%;
       background-color: rgba(247, 243, 243, 0.8);
-      .post__ntmy-day {
+      &__ntmy-day {
+        text-align: center;
+        font-weight: bold;
+        font-size: 1.2rem;
+        color:#ff9a9e;
       }
-      .post__image {
+      &__image {
+        width: 50%;
+        height: 50%;
+        margin: 0 auto;
+        img {
+          border-radius: 10%;
+          width: 90%;
+          height: 90%;
+        }
       }
-      .post__animal {
+      &__box {
+        color: whitesmoke;
+        display: flex;
+        justify-content: space-around;
+        &__animal {
+          @include right-list;
+          margin-right: 2%;
+        }
+        &__food {
+          @include right-list;
+        }
+        &__aura_color {
+          @include right-list;
+          margin-left: 2%;
+        }
       }
-      .post__food {
-      }
-      .post__aura_color {
-      }
-      .post__keyword1 {
-      }
-      .post__keyword2 {
-      }
-      .post__keyword3 {
+      &__keyword {
+        color: whitesmoke;
+        &__keyword1 {
+          @include keyword-list;
+        }
+        &__keyword2 {
+          @include keyword-list;
+        }
+        &__keyword3 {
+          @include keyword-list;
+        }
       }
     }
     .addpost__list {
       .addpost-content {
         .addpost {
           &__ntmy-day {
-            
+
           }
         }
       }
