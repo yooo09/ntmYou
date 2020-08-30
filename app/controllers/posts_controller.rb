@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:edit, :show, :update, :destroy]
   before_action :move_to_index, except: [:index, :show]
-  
+
   def index
   end
 
@@ -36,7 +36,6 @@ class PostsController < ApplicationController
     else
       render :edit
     end
-    @addpost.update(addpost_params)
   end
 
   def show

@@ -1,52 +1,3 @@
-@mixin right-list {
-  background-color: #ff9a9db9;
-  height:50%;
-  width:30%;
-  border-radius:50%;
-  line-height:10vh;
-  text-align:center;
-}
-@mixin keyword-list {
-  background-color: #ff9a9db9;
-  border-radius: 20px;
-  line-height:10vh;
-  text-align:center;
-  margin-top: 2%;
-}
-@mixin btn{
-  .btn-brackets {
-    display: inline-block;
-    position: relative;
-    padding: 0.5em 1em;
-    text-decoration: none;
-    transition: .4s;
-  }
-  .btn-brackets:hover {
-    color:#ff9a9e;
-  }
-  .btn-brackets:before, .btn-brackets:after {
-    position: absolute;
-    top: 0;
-    content:'';
-    width: 8px;
-    height: 100%;
-    display: inline-block;
-  }
-  .btn-brackets:before {
-    border-left: solid 1px #ff9a9e;
-    border-top: solid 1px #ff9a9e;
-    border-bottom: solid 1px #ff9a9e;
-    left: 0;
-  }
-  .btn-brackets:after {
-    content: '';
-    border-top: solid 1px #ff9a9e;
-    border-right: solid 1px #ff9a9e;
-    border-bottom: solid 1px #ff9a9e;
-    right: 0;
-  }
-}
-
 .posts-show {
   .post-content {
     width: 100%;
@@ -54,12 +5,7 @@
     background-size: cover;
     padding: 5%;
     .post {
-      border: solid 2px #ff9a9e;
-      border-radius: 5px;
-      width: 60%;
-      margin: 0 auto 1%;
-      padding: 3%;
-      background-color: rgba(247, 243, 243, 0.8);
+      @include post;
       &__contens {
         .select {
           float: right;
@@ -120,98 +66,59 @@
     .addpost__list {
       .addpost-content {
         .addpost {
+          @include post;
+          &__box {
+            float: right;
+            &__delete-btn {
+              @include btn;
+            }
+          }
           &__ntmy-day {
-
+            text-align: center;
+            font-weight: bold;
+            font-size: 1.2rem;
+            color:#ff9a9e;
+          }
+          &__keyword1 {
+            @include keyword-list;
+          }
+          &__keyword2 {
+            @include keyword-list;
+          }
+          &__keyword3 {
+            @include keyword-list;
           }
         }
       }
     }
   }
-  .edit-btn {
-  }
-  .delete-btn {
-  }
-  .form {
-    .ntmy-day {
-      &__content {
-
+  .form-content {
+    background-image: image-url("image_fff.jpg");
+    background-size: cover;
+    width: 60%;
+    margin: 0 auto 1%;
+    padding: 3%;
+    border: solid 2px #ff9a9e;
+    border-radius: 5px;
+    .form {
+      .ntmy-day {
+        @include content;
+        &__content {
+        }
+      }
+      .keyword {
+        &__content {
+          @include content;
+        }
+      }
+      .submit {
+        text-align: center;
+        .submit-btn {
+          cursor: pointer;
+          @include submit;
+          border: none;
+        }
       }
     }
   }
 }
-
-
-// .posts-show
-//   .post-content
-//     .post-content_box
-//       .post__ntmy-day
-//         = @post.created_at.strftime("%Y/%m/%d")
-//       .post__image
-//         = @post.image
-//       .post__animal
-//         = @post.animal
-//       .post__food
-//         = @post.food
-//       .post__aura_color
-//         = @post.aura_color
-//       .post__keyword1
-//         = @post.keyword1
-//       .post__keyword2
-//         = @post.keyword2
-//       .post__keyword3
-//         = @post.keyword3
-//     .addpost__list
-//       - if @addposts
-//         - @addposts.each do |addpost|
-//           .addpost-content
-//             .addpost-content_box
-//               .addpost__ntmy-day
-//                 = addpost.created_at.strftime("%Y/%m/%d")
-//               .addpost__keyword1
-//                 = addpost.keyword4
-//               .addpost__keyword2
-//                 = addpost.keyword5
-//               .addpost__keyword3
-//                 = addpost.keyword6
-//               .delete-btn
-//                 = link_to post_addpost_path(addpost), method: :delete do
-//                   削除する
-//   - if user_signed_in? && @post.user_id == current_user.id
-//     .edit-btn
-//       = link_to edit_post_path(@post.id) do
-//         編集する
-//     .delete-btn
-//       = link_to post_path(@post.id), method: :delete do
-//         削除する
-//     .form
-//       = form_with model: [@post, @addpost], class: :form, local: :true do |f|
-//         .ntmy-day
-//           .ntmy-day__content
-//             %h3
-//               再会日を選択
-//               .ntmy-day__box
-//                 = f.label :created_at, class: 'ntmy-label'
-//                 = f.date_select :created_at, class: 'ntmy-data'
-//         .keyword
-//           .keyword__content
-//             %h3
-//               ※キーワード
-//             .keyword-box
-//             -if @addpost.errors.messages[:keyword4].any?
-//               .error-message
-//                 %p必ず入力してください
-//             = f.text_area :keyword4, class: 'keyword-data'
-//         .keyword
-//           .keyword__content
-//             %h3
-//               キーワード
-//             .keyword-box
-//             = f.text_area :keyword5, class: 'keyword-data'
-//         .keyword
-//           .keyword__content
-//             %h3
-//               キーワード
-//             .keyword-box
-//             = f.text_area :keyword6, class: 'keyword-data'
-//         .submit
-//           = f.submit 'キオクする', class: 'submit-btn'

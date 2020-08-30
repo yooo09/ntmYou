@@ -28,3 +28,85 @@ a:link, a:visited, a:hover, a:active {
     font-size: 0.5rem;
   }
 }
+
+@mixin post {
+  border: solid 2px #ff9a9e;
+  border-radius: 5px;
+  width: 60%;
+  margin: 0 auto 1%;
+  padding: 3%;
+  background-color: rgba(247, 243, 243, 0.8);
+}
+@mixin right-list {
+  background-color: #ff9a9db9;
+  height:50%;
+  width:30%;
+  border-radius:50%;
+  line-height:10vh;
+  text-align:center;
+}
+@mixin keyword-list {
+  background-color: #ff9a9db9;
+  border-radius: 20px;
+  line-height:10vh;
+  text-align:center;
+  margin-top: 2%;
+  color: whitesmoke;
+
+}
+@mixin btn{
+  .btn-brackets {
+    display: inline-block;
+    position: relative;
+    padding: 0.5em 1em;
+    text-decoration: none;
+    transition: .4s;
+  }
+  .btn-brackets:hover {
+    color:#ff9a9e;
+  }
+  .btn-brackets:before, .btn-brackets:after {
+    position: absolute;
+    top: 0;
+    content:'';
+    width: 8px;
+    height: 100%;
+    display: inline-block;
+  }
+  .btn-brackets:before {
+    border-left: solid 1px #ff9a9e;
+    border-top: solid 1px #ff9a9e;
+    border-bottom: solid 1px #ff9a9e;
+    left: 0;
+  }
+  .btn-brackets:after {
+    content: '';
+    border-top: solid 1px #ff9a9e;
+    border-right: solid 1px #ff9a9e;
+    border-bottom: solid 1px #ff9a9e;
+    right: 0;
+  }
+}
+@mixin content {
+  opacity: 0.8;
+  border: solid 1px #ff9a9e;
+  text-align: center;
+  background-color: whitesmoke;
+  padding: 10px;
+  margin-bottom: 5%;
+}
+@mixin keyword {
+  text-align:center;
+  line-height: 3vw;
+}
+@mixin submit {
+  width: 40%;
+  height: 50%;
+  margin-bottom: 5%;
+  background-image: linear-gradient(to right, #ffecd2 0%, #fcb69f 100%);
+  border-radius: 20px;
+  text-align: center;
+  font-size: 1.0rem;
+  opacity: 0.85;
+  color: #302f2f;
+}
