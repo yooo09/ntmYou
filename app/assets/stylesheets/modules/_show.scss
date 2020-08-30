@@ -3,10 +3,40 @@
     width: 100%;
     background-image: image-url("image_ff.jpg");
     background-size: cover;
-    padding: 5%;
+    padding: 3%;
+    .form-content {
+      background-image: image-url("image_fff.jpg");
+      background-size: cover;
+      width: 65%;
+      margin: 0 auto 5%;
+      padding: 3%;
+      border: solid 2px #ff9a9e;
+      border-radius: 5px;
+      .form {
+        .ntmy-day {
+          @include content;
+          &__content {
+          }
+        }
+        .keyword {
+          &__content {
+            @include content;
+          }
+        }
+        .submit {
+          text-align: center;
+          .submit-btn {
+            cursor: pointer;
+            @include submit;
+            border: none;
+          }
+        }
+      }
+    }
     .post {
       @include post;
       &__contens {
+        margin-bottom: 6%;
         .select {
           float: right;
           &__edit-btn {
@@ -88,35 +118,6 @@
           &__keyword3 {
             @include keyword-list;
           }
-        }
-      }
-    }
-  }
-  .form-content {
-    background-image: image-url("image_fff.jpg");
-    background-size: cover;
-    width: 60%;
-    margin: 0 auto 1%;
-    padding: 3%;
-    border: solid 2px #ff9a9e;
-    border-radius: 5px;
-    .form {
-      .ntmy-day {
-        @include content;
-        &__content {
-        }
-      }
-      .keyword {
-        &__content {
-          @include content;
-        }
-      }
-      .submit {
-        text-align: center;
-        .submit-btn {
-          cursor: pointer;
-          @include submit;
-          border: none;
         }
       }
     }

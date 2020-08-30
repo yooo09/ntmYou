@@ -65,6 +65,11 @@
     }
     .submit {
       text-align: center;
+        .submit-btn {
+          cursor: pointer;
+          @include submit;
+          border: none;
+        }
       padding: 10px;
     }
   }
