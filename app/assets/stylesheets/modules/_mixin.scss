@@ -17,17 +17,17 @@ a:link, a:visited, a:hover, a:active {
   color: rgb(44, 43, 43);
 }
 
-@media (max-width: 1000px) {
-  li {
-    font-size: 0.9rem;
-  }
-}
+// @media (max-width: 1000px) {
+//   li {
+//     font-size: 0.9rem;
+//   }
+// }
 
-@media (max-width: 670px){
-  li {
-    font-size: 0.5rem;
-  }
-}
+// @media (max-width: 670px){
+//   li {
+//     font-size: 0.5rem;
+//   }
+// }
 
 @mixin post {
   border: solid 2px #ff9a9e;
